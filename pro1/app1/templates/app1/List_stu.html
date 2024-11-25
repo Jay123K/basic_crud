@@ -1,0 +1,34 @@
+{% extends 'app1/home.html' %}
+
+{% block content %}
+
+<h1>  Student  Table</h1>
+
+<table class="table" border="10px">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">First name</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for object in object_list %}
+      <tr>
+        <td>{{object.id}}</td>
+        <td >{{ object.name }}</td>
+        <td>
+            <button type="submit" class="btn btn-dark"><a href='{% url "update_stu"  object.id %}'>Update</a></button>
+            <button type="submit" class="btn btn-danger"><a href='{% url "Delete"  object.id %}'>Delete</a></button>
+        </td>
+        {% empty %}
+
+        <li>No object  found</li>
+        {% endfor %}
+
+        
+      </tr>
+    </tbody>
+  </table>
+
+{% endblock content %}

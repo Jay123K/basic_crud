@@ -1,0 +1,17 @@
+{% extends 'app1/home.html' %}
+
+{% block content %}
+<button class="btn btn-outline-primary"><a href="Student_list">Student  List</a></button>
+    <center>
+        <h1> Student  Form  </h1>
+    <form action="" method="post">
+        
+        {% csrf_token %}
+
+        {{form.as_p}}
+
+        <input type="submit" class="btn btn-success" value="Save">
+    </form>
+</center>
+
+{% endblock content %}
